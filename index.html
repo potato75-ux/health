@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Healthy Store</title>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-XXXXXXX');
+
+function trackClick(productName) {
+    gtag('event', 'buy_click', {
+        'event_category': 'ecommerce',
+        'event_label': productName
+    });
+    alert(productName + " added to cart!");
+}
+</script>
+
+<style>
+body { font-family: Arial; text-align: center; background:#f0fff0; }
+h1 { background: green; color: white; padding: 15px; }
+.card {
+    display:inline-block;
+    margin:20px;
+    padding:20px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    background:white;
+}
+button {
+    background:green;
+    color:white;
+    padding:10px;
+    border:none;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🥗 Healthy Food Store</h1>
+
+<div class="card">
+    <h2>Fresh Fruits</h2>
+    <p>₹150</p>
+    <button onclick="trackClick('Fresh Fruits')">Buy Now</button>
+</div>
+
+<div class="card">
+    <h2>Organic Veggies</h2>
+    <p>₹120</p>
+    <button onclick="trackClick('Organic Veggies')">Buy Now</button>
+</div>
+
+<div class="card">
+    <h2>Healthy Juice</h2>
+    <p>₹80</p>
+    <button onclick="trackClick('Healthy Juice')">Buy Now</button>
+</div>
+
+</body>
+</html>
